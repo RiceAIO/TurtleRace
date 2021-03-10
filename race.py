@@ -4,6 +4,9 @@ import time
 
 num = int(input('How Many Races Would You Like to See? '))
 
+win1 = 0
+win2 = 0
+
 for i in range(num):
     one = turtle.Turtle()
     two = turtle.Turtle()
@@ -57,12 +60,22 @@ for i in range(num):
         one.forward(20)
         one.left(90)
         one.write("winner yeehaw", font=('Arial', 28 , 'italic'))
+        win1 += 1
+
     else:
         two.right(90)
         two.forward(20)
         two.left(90)
         two.write("winner yeehaw",font=('Arial', 28 , 'italic'))
-
+        win2 += 1
+        
     turtle.clearscreen()
+
+print (f'Turtle 1 Has {win1} Wins !!!')
+print ('Turtle 1 win rate is', win1/num)
+
+print (f'Turtle 2 Has {win2} Wins !!!')
+print ('Turtle 2 win rate is', win2/num)
+
 turtle.mainloop()
 
