@@ -1,11 +1,24 @@
+import time
 import turtle
 import random
-import time
+import pyfiglet
+import termcolor
+from termcolor import colored
+from pyfiglet import print_figlet
 
+print_figlet('Turtle Race', font = 'slant', colors = '64;255;115')
+print (colored('-------------------------------------------------', 'red'))
 num = int(input('How Many Races Would You Like to See? '))
+print (colored('-------------------------------------------------', 'red'))
+print(colored(f'Number of Races = {num}', 'green'))
+print (colored('-------------------------------------------------', 'red'))
 
 win1 = 0
 win2 = 0
+
+def totalgames(num, wins, total):
+    print (f'Turtle {num} Has {wins} Wins !!!')
+    print (f'Turtle {num} Win Rate Is {wins/total}')
 
 for i in range(num):
     one = turtle.Turtle()
@@ -71,11 +84,9 @@ for i in range(num):
         
     turtle.clearscreen()
 
-print (f'Turtle 1 Has {win1} Wins !!!')
-print ('Turtle 1 win rate is', win1/num)
+totalgames(1, win1, num)
+totalgames(2, win2, num)
 
-print (f'Turtle 2 Has {win2} Wins !!!')
-print ('Turtle 2 win rate is', win2/num)
 
 turtle.mainloop()
 
