@@ -15,7 +15,7 @@ print (colored('-------------------------------------------------', 'red'))
 
 win1 = 0
 win2 = 0
-space = 20
+box_size = 20
 
 def totalgames(num, wins, total):
     print (f'Turtle {num} Has {wins} Wins !!!')
@@ -23,48 +23,48 @@ def totalgames(num, wins, total):
 
 
 for i in range(num):
-    
+
     turtle.bgcolor ('green')
     sq = turtle.Turtle()
     sq.shape("square")
-    sq.speed(1000000000000000)
+    sq.speed(10)
     sq.color("white")
     sq.penup()
 
     for i in range(20):
-        sq.goto(240, (300 - (i * space * 2)))
+        sq.goto(240, (300 - (i * box_size * 2)))
         sq.stamp()
 
     for i in range(20):
-        sq.goto(240 + space, ((340 - space) - (i * space * 2)))
-        sq.stamp()
-
-    sq.color("black")
-    for i in range(20):
-        sq.goto(240, (320 - (i * space * 2)))
-        sq.stamp()
-
-    for i in range(20):
-        sq.goto(240 + space, ((320 - space) - (i * space * 2)))
-        sq.stamp()
-
-    for i in range(20):
-        sq.color("white")
-        sq.goto(-285, (300 - (i * space * 2)))
-        sq.stamp()
-
-    for i in range(20):
-        sq.color("white")
-        sq.goto(-285 + space, ((340 - space) - (i * space * 2)))
+        sq.goto(240 + box_size, ((340 - box_size) - (i * box_size * 2)))
         sq.stamp()
 
     sq.color("black")
     for i in range(20):
-        sq.goto(-285, (320 - (i * space * 2)))
+        sq.goto(240, (320 - (i * box_size * 2)))
         sq.stamp()
 
     for i in range(20):
-        sq.goto(-285 + space, ((320 - space) - (i * space * 2)))
+        sq.goto(240 + box_size, ((320 - box_size) - (i * box_size * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.color("white")
+        sq.goto(-285, (300 - (i * box_size * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.color("white")
+        sq.goto(-285 + box_size, ((340 - box_size) - (i * box_size * 2)))
+        sq.stamp()
+
+    sq.color("black")
+    for i in range(20):
+        sq.goto(-285, (320 - (i * box_size * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.goto(-285 + box_size, ((320 - box_size) - (i * box_size * 2)))
         sq.stamp()
 
     one = turtle.Turtle()
@@ -74,11 +74,9 @@ for i in range(num):
 
     one.shape("turtle")
     two.shape("turtle")
-    ref.shape("turtle")
 
-    one.speed(1000000000000000)
-    two.speed(1000000000000000)
-    ref.speed(1000000000000000)
+    one.speed(10)
+    two.speed(10)
 
     one.color("red")
     two.color("blue")
@@ -89,24 +87,13 @@ for i in range(num):
     two.penup()
     two.goto(-275, -200)
 
-    ref.penup()
-    ref.goto(-275, 400)
-    ref.pendown()
-    ref.right(90)
-    ref.forward(800)
-
-    ref.penup()
-    ref.goto(250, 400)
-    ref.pendown()
-    ref.forward(800)
-
     total_length = 525 
     distance = 0
     distance1 = 0
 
     while distance < 525 and distance1 < 525:
-        move = random.randint(0,100)
-        move1 = random.randint(0,100)
+        move = random.randint(100,200)
+        move1 = random.randint(100,200)
         one.forward(move)
         two.forward(move1)
         time.sleep(0.5)
@@ -143,6 +130,7 @@ for i in range(num):
 
 totalgames(1, win1, num)
 totalgames(2, win2, num)
+print (colored('-------------------------------------------------', 'red'))
 
 turtle.mainloop()
 
