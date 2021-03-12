@@ -15,31 +15,76 @@ print (colored('-------------------------------------------------', 'red'))
 
 win1 = 0
 win2 = 0
+space = 20
 
 def totalgames(num, wins, total):
     print (f'Turtle {num} Has {wins} Wins !!!')
     print (f'Turtle {num} Win Rate Is {wins/total}')
 
+
 for i in range(num):
+    
     turtle.bgcolor ('green')
+    sq = turtle.Turtle()
+    sq.shape("square")
+    sq.speed(1000000000000000)
+    sq.color("white")
+    sq.penup()
+
+    for i in range(20):
+        sq.goto(240, (300 - (i * space * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.goto(240 + space, ((340 - space) - (i * space * 2)))
+        sq.stamp()
+
+    sq.color("black")
+    for i in range(20):
+        sq.goto(240, (320 - (i * space * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.goto(240 + space, ((320 - space) - (i * space * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.color("white")
+        sq.goto(-285, (300 - (i * space * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.color("white")
+        sq.goto(-285 + space, ((340 - space) - (i * space * 2)))
+        sq.stamp()
+
+    sq.color("black")
+    for i in range(20):
+        sq.goto(-285, (320 - (i * space * 2)))
+        sq.stamp()
+
+    for i in range(20):
+        sq.goto(-285 + space, ((320 - space) - (i * space * 2)))
+        sq.stamp()
 
     one = turtle.Turtle()
     two = turtle.Turtle()
     ref = turtle.Turtle()
+    
 
     one.shape("turtle")
     two.shape("turtle")
     ref.shape("turtle")
 
-    one.speed(0)
-    two.speed(0)
-    ref.speed(0)
+    one.speed(1000000000000000)
+    two.speed(1000000000000000)
+    ref.speed(1000000000000000)
 
     one.color("red")
     two.color("blue")
 
     one.penup()
-    one.goto(-275,200)
+    one.goto(-275,100)
 
     two.penup()
     two.goto(-275, -200)
@@ -67,6 +112,11 @@ for i in range(num):
         time.sleep(0.5)
         distance1 += move1
         distance += move
+
+    one.penup()
+    two.penup()
+    one.goto(-130,100)
+    two.goto(-130,50)
     one.write("Distance traveled: " + str(distance), font=('Arial', 28 , 'italic'))
     two.write("Distance traveled: " + str(distance1),font=('Arial', 28 , 'italic'))
 
